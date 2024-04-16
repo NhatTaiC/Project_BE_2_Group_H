@@ -1,0 +1,68 @@
+GitBash:
+
+cd ~/.ssh
+
+ssh-keygen -t rsa -C "nhattai0501@gmail.com" -f "id_rsa_NhatTaiC"
+
+ssh-keygen -t rsa -C "flintlookwood0501@gmail.com" -f "id_rsa_flintlookwood"
+
+pwd
+
+touch config
+
+
+Host github.com-NhatTaiC
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_NhatTaiC
+
+Host github.com-NhatTaiC
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_NhatTaiC
+
+
+
+eval "$(ssh-agent -s)"
+
+ssh-add -D
+
+ssh-add ~/.ssh/id_rsa_NhatTaiC
+
+ssh-add ~/.ssh/id_rsa_flintlookwood
+
+ssh-add -l
+
+
+
+
+
+
+
+
+
+
+
+
+CMDER:
+
+Koh:
+
+cd -> thu muc clone git
+
+git config user.name "NhatTaiC"
+
+git config user.email "nhattai0501@gmail.com"
+
+git remote set-url origin git@github.com-NhatTaiC:NhatTaiC/taikhoan1.git
+
+
+Flint:
+
+cd -> thu muc clone git
+
+git config user.name "flintlookwood"
+
+git config user.email "flintlookwood0501@gmail.com"
+
+git remote set-url origin git@github.com-flintlookwood:flintlookwood/taikhoan2.git

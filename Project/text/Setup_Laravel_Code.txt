@@ -1,0 +1,33 @@
+/*Download Laravel 10.x*/
+composer create-project laravel/laravel:^10.0 example-app
+
+/*Config my.ini (phpAdmin - Xampp)*/
+skip-grant-tables
+
+/*Check Version Php*/
+php artisan --version
+
+/*Clean Laravel Src (Cmder at Folder Laravel Src)*/
+php artisan route:clear
+php artisan storage:link
+php artisan config:clear
+php artisan view:clear
+composer dump-autoload
+
+/*Create New DB On PhpAdmin*/
+create database laravel default character set utf8;
+
+/*Create Data of DB*/
+php artisan migrate
+
+/*Rollback Root DB*/Delete All
+php artisan migrate:rollback
+
+/*Refresh DB*/
+php artisan migrate:fesh
+
+/*Create New Key*/
+php artisan key:generate
+
+/*Start Laravel*/
+php artisan serve
