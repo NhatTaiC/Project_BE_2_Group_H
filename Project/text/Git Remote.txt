@@ -2,24 +2,24 @@ GitBash:
 
 cd ~/.ssh
 
-ssh-keygen -t rsa -C "nhattai0501@gmail.com" -f "id_rsa_NhatTaiC"
+ssh-keygen -t rsa -C "username1@mail.com" -f "id_rsa_username1"
 
-ssh-keygen -t rsa -C "flintlookwood0501@gmail.com" -f "id_rsa_flintlookwood"
+ssh-keygen -t rsa -C "username2@mail.com" -f "id_rsa_username2"
 
 pwd
 
 touch config
 
 
-Host github.com-NhatTaiC
+Host github.com-username1
 HostName github.com
 User git
-IdentityFile ~/.ssh/id_rsa_NhatTaiC
+IdentityFile ~/.ssh/id_rsa_username1
 
-Host github.com-NhatTaiC
+Host github.com-username2
 HostName github.com
 User git
-IdentityFile ~/.ssh/id_rsa_NhatTaiC
+IdentityFile ~/.ssh/id_rsa_username2
 
 
 
@@ -27,9 +27,9 @@ eval "$(ssh-agent -s)"
 
 ssh-add -D
 
-ssh-add ~/.ssh/id_rsa_NhatTaiC
+ssh-add ~/.ssh/id_rsa_username1
 
-ssh-add ~/.ssh/id_rsa_flintlookwood
+ssh-add ~/.ssh/id_rsa_username2
 
 ssh-add -l
 
@@ -46,23 +46,23 @@ ssh-add -l
 
 CMDER:
 
-Koh:
+Username1:
 
 cd -> thu muc clone git
 
-git config user.name "NhatTaiC"
+git config user.name "username1"
 
-git config user.email "nhattai0501@gmail.com"
+git config user.email "username1@mail.com"
 
-git remote set-url origin git@github.com-NhatTaiC:NhatTaiC/taikhoan1.git
+git remote set-url origin git@github.com-username1:NhatTaiC/taikhoan1.git
 
 
-Flint:
+Username2:
 
 cd -> thu muc clone git
 
-git config user.name "flintlookwood"
+git config user.name "username2"
 
-git config user.email "flintlookwood0501@gmail.com"
+git config user.email "username2@mail.com"
 
-git remote set-url origin git@github.com-flintlookwood:flintlookwood/taikhoan2.git
+git remote set-url origin git@github.com-username2:flintlookwood/taikhoan2.git
