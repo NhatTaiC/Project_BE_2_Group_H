@@ -2,11 +2,11 @@
 
 @section('content')
     <main class="login-form">
-        <div class="container">
+        <div class="container my-5 pt-5">
             <div class="container-fluid py-2 text-center">
                 <h2 style="font-weight: bold;">Danh Sách User</h2>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pb-5">
                 <table class="table table-bordered table:hover">
                     <thead>
                     <tr>
