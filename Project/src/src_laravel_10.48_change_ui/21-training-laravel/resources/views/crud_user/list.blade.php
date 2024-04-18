@@ -35,34 +35,7 @@
                     </tbody>
                 </table>
 
-                <!-- Phan Trang Users -->
-                {{--<?php
-                  include_once("resources/views/crud_user/config.php");
-                  include_once("resources/views/crud_user/db.php");
-                  include_once("resources/views/crud_user/user.php");
-                  include_once("resources/views/crud_user/user_db.php");
-
-                  $user_db = new User_Db();
-
-                  $url = $_SERVER['PHP_SELF'];
-
-                  $page = "";
-                  if (!isset($_GET['page'])) {
-                      # code...
-                      $page = 1;
-                  } else {
-                      # code...
-                      $page = $_GET['page'];
-                  }
-
-                  $total = $user_db->getCount();
-
-                  $perPage = 5;
-
-                  $offSet = 1;
-
-                  echo $user_db->getPaginationBar($url, $page, $total, $perPage, $offSet);
-                  ?>--}}
+                {{ $users->links() }}
 
             </div>
         </div>
