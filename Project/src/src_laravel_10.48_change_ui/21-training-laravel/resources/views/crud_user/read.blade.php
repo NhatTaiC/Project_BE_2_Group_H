@@ -2,9 +2,9 @@
 
 @section('content')
     <main class="login-form">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="container-fluid py-2 text-center">
+        <div class="container mt-5">
+            <div class="row justify-content-center mt-5">
+                <div class="container-fluid py-2 text-center mt-5">
                     <h3 style="font-weight: bold;">
                         Màn Hình Chi Tiết
                     </h3>
