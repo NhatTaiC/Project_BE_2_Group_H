@@ -2,9 +2,9 @@
 
 @section('content')
     <main class="login-form">
-        <div class="cotainer">
+        <div class="cotainer my-5 mx-auto">
             <div class="row justify-content-center">
-                <div class="col-md-4 mt-5">
+                <div class="col-md-4 my-5 pt-5">
                     <div class="card mx-auto border-dark" style="width: 600px;">
                         <h4 class="card-header text-center">
                             Màn Hình Đăng Nhập

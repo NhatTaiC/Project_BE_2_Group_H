@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Hash;
+use Illuminate\Support\Facades\DB;
 use Session;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -139,8 +140,15 @@ class CrudUserController extends Controller
     public function listUser()
     {
         if (Auth::check()) {
-            $users = User::all();
+
+            /* $users = User::all();
+
+          return view('crud_user.list', ['users' => $users]);*/
+
+            $users = DB::table('users')->paginate(5);
+
             return view('crud_user.list', ['users' => $users]);
+
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
@@ -156,5 +164,6 @@ class CrudUserController extends Controller
 
         return Redirect('login');
     }
+
 }
 ?>
