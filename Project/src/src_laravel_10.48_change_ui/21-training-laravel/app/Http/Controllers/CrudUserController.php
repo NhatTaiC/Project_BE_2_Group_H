@@ -140,13 +140,15 @@ class CrudUserController extends Controller
     public function listUser()
     {
         if (Auth::check()) {
-            $users = User::all();
+
+            /* $users = User::all();
+
+          return view('crud_user.list', ['users' => $users]);*/
+
+            $users = DB::table('users')->paginate(5);
 
             return view('crud_user.list', ['users' => $users]);
 
-           /* $users = DB::table('users')->simplePaginate(5);
-
-            return view('crud_user.list', ['users' => $users]);*/
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
@@ -163,16 +165,4 @@ class CrudUserController extends Controller
         return Redirect('login');
     }
 
-    /*
-     * Paginate
-     * */
-    public function index()
-    {
-        $users = DB::table('users')->paginate(5);
-
-      /*  return view('crud_user.list', compact('users'));*/
-
-
-        return view('crud_user.list', ['users' => $users]);
-    }
 }
