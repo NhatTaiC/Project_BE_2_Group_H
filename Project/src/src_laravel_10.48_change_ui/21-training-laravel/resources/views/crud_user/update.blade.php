@@ -2,10 +2,17 @@
 
 @section('content')
     <main class="signup-form">
+<<<<<<< HEAD
         <div class="cotainer">
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="card mx-auto border-dark" style="width: 600px;">
+=======
+        <div class="cotainer mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-4 mt-5">
+                    <div class="card mx-auto border-dark mt-5" style="width: 600px;">
+>>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
                         <h3 class="card-header text-center">
                             Màn Hình Cập Nhật
                         </h3>

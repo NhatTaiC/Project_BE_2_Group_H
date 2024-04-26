@@ -2,11 +2,19 @@
 
 @section('content')
     <main class="login-form">
+<<<<<<< HEAD
         <div class="container">
             <div class="container-fluid py-2 text-center">
                 <h2 style="font-weight: bold;">Danh Sách User</h2>
             </div>
             <div class="row justify-content-center">
+=======
+        <div class="container my-5 pt-5">
+            <div class="container-fluid py-2 text-center">
+                <h2 style="font-weight: bold;">Danh Sách User</h2>
+            </div>
+            <div class="row justify-content-center pb-5">
+>>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
                 <table class="table table-bordered table:hover">
                     <thead>
                     <tr>
@@ -34,6 +42,12 @@
                     @endforeach
                     </tbody>
                 </table>
+<<<<<<< HEAD
+=======
+
+                {{ $users->links() }}
+
+>>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
             </div>
         </div>
     </main>

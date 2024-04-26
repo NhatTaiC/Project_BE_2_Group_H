@@ -2,9 +2,15 @@
 
 @section('content')
     <main class="login-form">
+<<<<<<< HEAD
         <div class="container">
             <div class="row justify-content-center">
                 <div class="container-fluid py-2 text-center">
+=======
+        <div class="container mt-5">
+            <div class="row justify-content-center mt-5">
+                <div class="container-fluid py-2 text-center mt-5">
+>>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
                     <h3 style="font-weight: bold;">
                         Màn Hình Chi Tiết
                     </h3>

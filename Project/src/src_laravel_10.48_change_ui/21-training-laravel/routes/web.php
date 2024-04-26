@@ -24,7 +24,11 @@ Route::post('create', [CrudUserController::class, 'postUser'])->name('user.postU
 
 Route::get('read', [CrudUserController::class, 'readUser'])->name('user.readUser');
 
+<<<<<<< HEAD
 Route::put('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
+=======
+Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
+>>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
 
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
@@ -36,3 +40,7 @@ Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
