@@ -33,13 +33,10 @@ class CrudUserController extends Controller
             'password' => 'required',
         ]);
 
-        /* Mac Dinh */
-        /*
-         * $credentials = $request->only('email', 'password');
-         * */
+         $credentials = $request->only('email', 'password');
 
         /* Theo Yeu Cau: Nhap Email/Password nao cung vao duoc trang web */
-        $credentials = (['email' => "user1@mail.com", 'password' => "123456"]);
+        /*$credentials = (['email' => "user1@mail.com", 'password' => "123456"]);*/
 
         if (Auth::attempt($credentials)) {
             return redirect()->intended('list')
