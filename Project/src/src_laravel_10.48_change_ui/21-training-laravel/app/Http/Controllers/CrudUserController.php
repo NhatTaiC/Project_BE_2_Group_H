@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use Hash;
-<<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\DB;
->>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
 use Session;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -36,28 +33,18 @@ class CrudUserController extends Controller
             'password' => 'required',
         ]);
 
-<<<<<<< HEAD
-        $credentials = $request->only('email', 'password');
-=======
-        /* Mac Dinh */
-        /*
-         * $credentials = $request->only('email', 'password');
-         * */
-
         /* Theo Yeu Cau: Nhap Email/Password nao cung vao duoc trang web */
-        $credentials = (['email' => "user1@mail.com", 'password' => "123456"]);
+        /*$credentials = (['email' => "user1@mail.com", 'password' => "123456"]);*/
 
->>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
+        $credentials = $request->only('email', 'password');
+
         if (Auth::attempt($credentials)) {
             return redirect()->intended('list')
                 ->withSuccess('Signed in');
         }
 
         return redirect("login")->withSuccess('Login details are not valid');
-<<<<<<< HEAD
-=======
 
->>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
     }
 
     /**
@@ -92,12 +79,8 @@ class CrudUserController extends Controller
     /**
      * View user detail page
      */
-<<<<<<< HEAD
-    public function readUser(Request $request) {
-=======
     public function readUser(Request $request)
     {
->>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
         $user_id = $request->get('id');
         $user = User::find($user_id);
 
@@ -107,20 +90,12 @@ class CrudUserController extends Controller
     /**
      * Delete user by id
      */
-<<<<<<< HEAD
-    public function deleteUser(Request $request) {
-        $user_id = $request->get('id');
-        $user = User::destroy($user_id);
-
-        return redirect("list")->withSuccess('User has deleted successfully');
-=======
     public function deleteUser(Request $request)
     {
         $user_id = $request->get('id');
         $user = User::destroy($user_id);
 
         return redirect("list")->withSuccess('You have signed-in');
->>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
     }
 
     /**
@@ -143,11 +118,7 @@ class CrudUserController extends Controller
 
         $request->validate([
             'name' => 'required',
-<<<<<<< HEAD
-            'email' => 'required|email|unique:users,id,'.$input['id'],
-=======
             'email' => 'required|email|unique:users,id,' . $input['id'],
->>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
             'password' => 'required|min:6',
         ]);
 
@@ -165,11 +136,6 @@ class CrudUserController extends Controller
      */
     public function listUser()
     {
-<<<<<<< HEAD
-        if(Auth::check()){
-            $users = User::all();
-            return view('crud_user.list', ['users' => $users]);
-=======
         if (Auth::check()) {
 
             /* $users = User::all();
@@ -180,7 +146,6 @@ class CrudUserController extends Controller
 
             return view('crud_user.list', ['users' => $users]);
 
->>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
@@ -189,19 +154,12 @@ class CrudUserController extends Controller
     /**
      * Sign out
      */
-<<<<<<< HEAD
-    public function signOut() {
-=======
     public function signOut()
     {
->>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
         Session::flush();
         Auth::logout();
 
         return Redirect('login');
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> ed6f8b7a0d5e47d0a1920dbb0677276fccbd02f1
 }
