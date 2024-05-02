@@ -1,0 +1,11 @@
+1. Open Src in PhpStorm or VS Code check file env (database_name = laravel, port = 3307)
+2. Open Xampp (Configed phpMyAdmin)-> Open phpMyAdmin
+3. Open Cmder => Locate Src Laravel 10.48_change_ui => 3 commands git (SSH KEY)
+4. Check have database laravel in phpMyAdmin Yet? -> If yes continue, not yet -> Open Setup_Laravel_Code.txt Create laravel DB
+in phpMyAdmin first
+4.1. Check laravel migrate yet? If not -> Run php artisan migrate
+4.2. Run seeder.bat
+4.3. Run 1-clear.bat
+4.4. Run php artisan key:generate
+4.5. Run php artisan serve
+5. Enjoy!
