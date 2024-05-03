@@ -4,30 +4,54 @@ composer create-project laravel/laravel:^10.0 example-app
 /*Config my.ini (phpAdmin - Xampp)*/
 skip-grant-tables
 
-/*Check Version Php*/
+/* Check Version Php */
 php artisan --version
 
-/*Clean Laravel Src (Cmder at Folder Laravel Src)*/
+/* Clean Laravel Src (Cmder at Folder Laravel Src) */
 php artisan route:clear
 php artisan storage:link
 php artisan config:clear
 php artisan view:clear
 composer dump-autoload
 
-/*Create New DB On PhpAdmin*/
+/* Create New DB On PhpAdmin */
 create database laravel default character set utf8;
 
-/*Create Data of DB*/
+/* Create Data of DB */
 php artisan migrate
 
-/*Rollback Root DB*/Delete All
+/* Rollback Root DB */ =>Delete All
 php artisan migrate:rollback
 
-/*Refresh DB*/
+/* Refresh DB */
 php artisan migrate:fesh
 
-/*Create New Key*/
+/* Create New Key */
 php artisan key:generate
 
-/*Start Laravel*/
+/* Start Laravel */
 php artisan serve
+
+/* Create Table In Laravel */
+php artisan make:migration create_user_profile_table
+php artisan make:migration create_posts_table
+php artisan make:migration create_user_favorite_table
+php artisan make:migration create_favorities_table
+
+/* Create Data Examble */
+php artisan make:seeder FavoriteSeeder // Create Class Seeder
+php artisan make:seeder PostsSeeder
+php artisan make:seeder UserFavoriteSeeder
+php artisan make:seeder UserProfileSeeder
+php artisan make:seeder UserSeeder
+
+php artisan db:seed --class=FavoriteSeeder // Insert Data Examble in Table
+php artisan db:seed --class=PostsSeeder
+php artisan db:seed --class=UserFavoriteSeeder
+php artisan db:seed --class=UserProfileSeeder
+php artisan db:seed --class=UserSeeder
+
+/* Create Model */
+php artisan make:model Posts
+php artisan make:model Favorities
+php artisan make:model Profile
