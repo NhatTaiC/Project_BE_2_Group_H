@@ -34,7 +34,7 @@ Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
 Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
 
-
+Route::get('deleteRelationship', [\App\Http\Controllers\CrudRelationship::class, 'deleteRelationship'])->name('relationship.deleteRelationship');
 Route::get('listRelationship', [\App\Http\Controllers\CrudRelationship::class, 'index'])->name('relationship.index');
 
 

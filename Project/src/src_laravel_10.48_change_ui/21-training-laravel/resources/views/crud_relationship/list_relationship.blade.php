@@ -22,7 +22,7 @@
                             <td class="text-center">{{ $relationship->tenPhongBan }}</td>
                             <td class="text-center">{{ $relationship->soDT }}</td>
                             <td class="text-center">
-                                <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}"
+                                <a href="{{ route('relationship.deleteRelationship', ['maLienHe' => $relationship->maLienHe]) }}"
                                    class="link-control text-decoration-none">Delete</a>
                             </td>
                         </tr>
