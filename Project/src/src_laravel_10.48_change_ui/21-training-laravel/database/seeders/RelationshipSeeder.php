@@ -14,12 +14,12 @@ class RelationshipSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('relationship')->insert([
+        DB::table('relationships')->insert([
             'maLienHe' => 'mlh01',
             'tenPhongBan' => 'BeDauCoder',
             'soDT' => '9498794'
         ]);
-        DB::table('relationship')->insert([
+        DB::table('relationships')->insert([
             'maLienHe' => 'mlh02',
             'tenPhongBan' => 'BeDauTrading',
             'soDT' => '943398794'

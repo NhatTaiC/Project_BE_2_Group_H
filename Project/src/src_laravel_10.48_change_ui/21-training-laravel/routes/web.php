@@ -33,7 +33,8 @@ Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
 
 Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('listRelationship', [\App\Http\Controllers\CrudRelationship::class, 'index'])->name('relationship.index');
+
 
