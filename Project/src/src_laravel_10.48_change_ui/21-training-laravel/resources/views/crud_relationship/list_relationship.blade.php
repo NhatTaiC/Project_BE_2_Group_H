@@ -24,13 +24,15 @@
                             <td class="text-center">
                                 <a href="{{ route('relationship.deleteRelationship', ['maLienHe' => $relationship->maLienHe]) }}"
                                    class="link-control text-decoration-none">Delete</a>
+                                <a href="{{ route('relationship.updateRelationship', ['maLienHe' => $relationship->maLienHe]) }}"
+                                   class="link-control text-decoration-none">Edit</a>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
                 {{ $relationships->links() }}
-                
+
             </div>
         </div>
     </main>

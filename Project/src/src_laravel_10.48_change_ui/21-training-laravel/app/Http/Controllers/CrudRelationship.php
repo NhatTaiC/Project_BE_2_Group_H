@@ -41,5 +41,35 @@ class CrudRelationship extends Controller
         $relationship = Relationship::destroy($maLienHe_id);
         return redirect("listRelationship")->withSuccess('You have signed-in');
     }
+
+    public function updateRelationship(Request $request)
+    {
+        $maLienHe_id = $request->get('maLienHe');
+        $relationship = Relationship::find($maLienHe_id);
+
+        return view('crud_relationship.update_relationship', ['maLienHe' => $relationship]);
+    }
+
+    /**
+     * Submit form update user
+     */
+    public function postUpdateRelationship(Request $request)
+    {
+        $input = $request->all();
+
+        $request->validate([
+            'maLienHe' => 'required',
+            'tenPhongBan' => 'required',
+            'soDT' => 'required',
+        ]);
+
+        $relationship = Relationship::find($input['maLienHe']);
+        $relationship->maLienHe = $input['maLienHe'];
+        $relationship->tenPhongBan = $input['tenPhongBan'];
+        $relationship->soDT = $input['soDT'];
+        $relationship->save();
+
+        return redirect("listRelationship")->withSuccess('You have signed-in');
+    }
 }
 
