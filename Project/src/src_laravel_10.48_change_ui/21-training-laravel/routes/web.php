@@ -37,4 +37,7 @@ Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 Route::get('deleteRelationship', [\App\Http\Controllers\CrudRelationship::class, 'deleteRelationship'])->name('relationship.deleteRelationship');
 Route::get('listRelationship', [\App\Http\Controllers\CrudRelationship::class, 'index'])->name('relationship.index');
 
+Route::get('addPageRelationship', [\App\Http\Controllers\CrudRelationship::class, 'addPageRelationship'])->name('relationship.addPageRelationship');
+Route::post('addPageRelationship', [\App\Http\Controllers\CrudRelationship::class, 'postRelationship'])->name('relationship.postRelationship');
+
 

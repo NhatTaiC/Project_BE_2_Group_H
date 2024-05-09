@@ -30,6 +30,7 @@
                     </tbody>
                 </table>
                 {{ $relationships->links() }}
+                
             </div>
         </div>
     </main>
