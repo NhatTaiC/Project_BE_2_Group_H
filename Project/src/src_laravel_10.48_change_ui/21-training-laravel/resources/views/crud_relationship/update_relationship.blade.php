@@ -16,25 +16,19 @@
                                     <tr>
                                         <td class="td-left">Mã liên hệ:</td>
                                         <td class="td-right"><input type="text" id="maLienHe" class="td-right-username form-control"
-                                                                    name="maLienHe" required autofocus>
+                                                                    name="maLienHe" required autofocus value="{{$relationship->maLienHe}}">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="td-left">Tên Phòng Ban:</td>
                                         <td class="td-right"><input type="text" id="tenPhongBan" class="td-right-mk form-control"
-                                                                    name="tenPhongBan" required autofocus>
-                                            @if ($errors->has('tenPhongBan'))
-                                                <span class="text-danger">{{ $errors->first('tenPhongBan') }}</span>
-                                            @endif
+                                                                    name="tenPhongBan" required autofocus value="{{$relationship->tenPhongBan}}">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="td-left">Số Điện Thoại:</td>
                                         <td class="td-right"><input type="text" id="soDT" class="td-right-mk form-control"
-                                                                    name="soDT" required autofocus>
-                                            @if ($errors->has('soDT'))
-                                                <span class="text-danger">{{ $errors->first('soDT') }}</span>
-                                            @endif
+                                                                    name="soDT" required autofocus value="{{$relationship->soDT}}">
                                         </td>
                                     </tr>
                                     <tr>

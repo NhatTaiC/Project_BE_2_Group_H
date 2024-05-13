@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('relationboardship')
 
 @section('content')
     <main class="login-form">
@@ -10,9 +10,10 @@
                 <table class="table table-bordered table:hover">
                     <thead>
                     <tr>
-                        <th class="text-center">maLienHe</th>
-                        <th class="text-center">tenPhongBan</th>
-                        <th class="text-center">soDT</th>
+                        <th class="text-center">Mã Liên Hệ</th>
+                        <th class="text-center">Tên Phòng Ban</th>
+                        <th class="text-center">Số Điện Thoại</th>
+                        <th class="text-center">Công Cụ</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,8 +32,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                {{ $relationships->links() }}
-
+               <div> {{ $relationships->links() }}</div>
             </div>
         </div>
     </main>

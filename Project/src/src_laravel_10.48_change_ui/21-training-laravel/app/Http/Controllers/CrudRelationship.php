@@ -10,7 +10,7 @@ class CrudRelationship extends Controller
 {
     public function index(Request $request)
     {
-        $relationships = DB::table('relationships')->paginate(1);
+        $relationships = DB::table('relationships')->paginate(5);
         return view('crud_relationship.list_relationship',['relationships' => $relationships]);
     }
 
@@ -44,6 +44,7 @@ class CrudRelationship extends Controller
 
     public function updateRelationship(Request $request)
     {
+        var_dump($request);
         $maLienHe_id = $request->get('maLienHe');
         $relationship = Relationship::find($maLienHe_id);
 
@@ -56,12 +57,12 @@ class CrudRelationship extends Controller
     public function postUpdateRelationship(Request $request)
     {
         $input = $request->all();
-
         $request->validate([
             'maLienHe' => 'required',
             'tenPhongBan' => 'required',
             'soDT' => 'required',
         ]);
+
 
         $relationship = Relationship::find($input['maLienHe']);
         $relationship->maLienHe = $input['maLienHe'];
