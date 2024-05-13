@@ -1,0 +1,10 @@
+
+LoaiXe(maLoaiXe, tenLoaiXe, moTa, namSX)
+Xe(maXe, tenXe, maLoaiXe, hinhAnhXe, giaXe)
+ChiTietXe(maChiTiet, maXe, mauXe, kichThuoc, taiTrong, dongCo, congSuat)
+, hopSo, danDong, tangToc, vTTD, dTBinhXang, vanHanh, loaiNhienLieu, mucTieuThuTrongDT,
+mucTieuThuNgoaiDT, moTa)
+ChiNhanh(maCN, tenCN, diaChiCN, sodtCN)
+TaiKhoan(userName, passWord, phanQuyen)
+LichHen(maLH, tenLH, tenKH, soDTKH, maLoaiXe, trangThai, yeuCau)
+LienHe(maLHe, tenPhongBan, soDT)
