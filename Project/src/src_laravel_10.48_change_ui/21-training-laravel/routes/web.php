@@ -43,6 +43,8 @@ Route::post('addPageRelationship', [\App\Http\Controllers\CrudRelationship::clas
 Route::get('updateRelationship', [\App\Http\Controllers\CrudRelationship::class, 'updateRelationship'])->name('relationship.updateRelationship');
 Route::post('updateRelationship', [\App\Http\Controllers\CrudRelationship::class, 'postUpdateRelationship'])->name('relationship.postUpdateRelationship');
 
+Route::get('listbranches', [\App\Http\Controllers\CrudBranchController::class,'listBranches'])->name('listbranches');
+
 //                       _oo0oo_
 //                      o8888888o
 //                      88" . "88
