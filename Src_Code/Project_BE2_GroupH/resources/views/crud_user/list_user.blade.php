@@ -7,9 +7,16 @@
     {{--  Title  --}}
     <section class="section-title">
         <div class="container-fluid my-5 text-center">
-            <h1 class="title">List User</h1>
+            <h1 class="title">Danh Sách Người Dùng</h1>
         </div>
     </section>
+
+    {{-- Thông Báo --}}
+    @if (Session::has('success'))
+        <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i> {{ Session::get('success') }}
+        </div>
+    @endif
 
     {{-- Table --}}
     <main class="login-form">
@@ -20,7 +27,7 @@
                     <thead>
                     <tr class="row-header">
                         <th class="text-center bg-info th-data">ID</th>
-                        <th class="text-center bg-info th-data">UserName</th>
+                        <th class="text-center bg-info th-data">Username</th>
                         <th class="text-center bg-info th-data">Email</th>
                         <th class="text-center bg-info th-data">Phone</th>
                         <th class="text-center bg-info th-data">Avatar</th>
@@ -54,6 +61,12 @@
                 </table>
                 <br>
 
+                {{-- Nút Thêm Người Dùng --}}
+                <button class="btn btn-dark p-3" type="button" style="width: 30%">
+                    <a href="{{ route('user.createUser') }}" class="btn-them text-decoration-none text-white" style="font-weight: 700; font-size: 20px">Thêm Người Dùng</a>
+                </button>
+
+                {{-- Phân Trang --}}
                 <div class="link text-center my-5 mx-5 px-5" style="text-align: center">{!! $users->links() !!}</div>
 
             </div>

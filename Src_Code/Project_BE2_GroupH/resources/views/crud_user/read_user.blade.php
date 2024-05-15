@@ -19,7 +19,7 @@
                     <thead>
                     <tr class="row-header" style="background: lightcoral; font-size: 30px; font-weight: 700">
                         <th class="text-center bg-info th-data">ID</th>
-                        <th class="text-center bg-info th-data">UserName</th>
+                        <th class="text-center bg-info th-data">Username</th>
                         <th class="text-center bg-info th-data">Email</th>
                         <th class="text-center bg-info th-data">Phone</th>
                         <th class="text-center bg-info th-data">Avatar</th>

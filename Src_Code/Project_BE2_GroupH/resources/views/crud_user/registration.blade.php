@@ -4,8 +4,8 @@
     <main class="signup-form">
         <div class="cotainer">
             <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-4 mt-5">
+                    <div class="card mt-5">
                         <h3 class="card-header text-center">Register User</h3>
                         <div class="card-body">
                             <form action="{{ route('user.postUser') }}" method="POST">
