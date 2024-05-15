@@ -41,9 +41,9 @@
                             <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                data-bs-toggle="dropdown">Management</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href=" {{ route('user.list') }} ">TaiKhoan</a></li>
-                                <li><a class="dropdown-item" href="#">LoaiXe</a></li>
-                                <li><a class="dropdown-item" href="#">Xe</a></li>
+                                <li><a class="dropdown-item" href="{{ route('user.list') }}">TaiKhoan</a></li>
+                                <li><a class="dropdown-item" href="{{ route('loaixe.list_loaixe') }}">LoaiXe</a></li>
+                                <li><a class="dropdown-item" href="{{ route('xe.list_xe') }}">Xe</a></li>
                                 <li><a class="dropdown-item" href="#">ChiTietXe</a></li>
                                 <li><a class="dropdown-item" href="#">ChiNhanh</a></li>
                                 <li><a class="dropdown-item" href="#">LichHen</a></li>
