@@ -13,7 +13,7 @@
 <section class="section-navbar">
     <nav class="navbar navbar-dark bg-dark text-white navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
         <div class="container">
-            <a class="navbar-brand mr-auto" href="#">Laravel Training</a>
+            <a class="navbar-brand mr-auto" href="#">Laravel Group H</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -23,22 +23,22 @@
                     @guest
                         {{-- Login --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link text-white" href="{{ route('login') }}">Login</a>
                         </li>
 
                         {{-- CreateUser --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('user.createUser') }}">Register</a>
+                            <a class="nav-link text-white" href="{{ route('user.createUser') }}">Register</a>
                         </li>
                     @else
                         {{-- Home Page --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Home</a>
+                            <a class="nav-link text-white" href="{{ route('home') }}">Home</a>
                         </li>
 
                         {{-- Dropdown --}}
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                data-bs-toggle="dropdown">Management</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href=" {{ route('user.list') }} ">TaiKhoan</a></li>
@@ -53,7 +53,7 @@
 
                         {{-- Logout --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('signout') }}">Logout</a>
+                            <a class="nav-link text-white" href="{{ route('signout') }}">Logout</a>
                         </li>
                     @endguest
                 </ul>
@@ -68,7 +68,7 @@
 {{-- Footer --}}
 <section class="section-footer mt-5 pt-5">
     <div class="container-fluid text-center bg-dark fixed-bottom p-2">
-        <h1 class="footer-title text-white">Lập Trình Web BE2 2024</h1>
+        <h1 class="footer-title text-white">Lập Trình Web BE 2 2024</h1>
     </div>
 </section>
 
