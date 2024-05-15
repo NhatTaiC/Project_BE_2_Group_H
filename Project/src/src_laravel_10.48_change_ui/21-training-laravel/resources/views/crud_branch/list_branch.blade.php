@@ -30,7 +30,11 @@
                             <td>
                                 <a href="{{ route('branch.edit', ['maCN' => $branch->maCN]) }}"
                                    class="btn btn-primary">Edit</a>
-
+                                <form action="{{ route('student.delete', ['id'=>$student->id])}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

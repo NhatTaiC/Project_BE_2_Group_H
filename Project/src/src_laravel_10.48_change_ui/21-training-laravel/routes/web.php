@@ -48,8 +48,10 @@ Route::get('listBranch', [\App\Http\Controllers\CrudBranchController::class,'lis
 Route::get('create-branch', [\App\Http\Controllers\CrudBranchController::class, 'createBranch'])->name('branch.createBranch');
 Route::post('create-branch', [\App\Http\Controllers\CrudBranchController::class, 'postBranch'])->name('branch.postBranch');
 
-Route::get('edit-sinhvien/{id}', [StudentController::class, 'edit'])->name('student.edit');
-Route::post('update-sinhvien/{id}', [StudentController::class, 'update'])->name('student.update');
+Route::get('edit-sinhvien/{maCN}', [\App\Http\Controllers\CrudBranchController::class, 'edit'])->name('branch.edit');
+Route::post('update-sinhvien/{maCN}', [\App\Http\Controllers\CrudBranchController::class, 'update'])->name('branch.update');
+
+Route::delete('delete-sinhvien/{maCN}', [App\Http\Controllers\CrudBranchController::class, 'delete'])->name('student.delete');
 
 
 //                       _oo0oo_
