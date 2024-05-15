@@ -24,11 +24,19 @@
                             <td class="text-center">{{ $branch->tenCN }}</td>
                             <td class="text-center">{{ $branch->diaChiCN }}</td>
                             <td class="text-center">{{ $branch->sodtCN }}</td>
-                            <td class="text-center">{{ $branch->imgCN }}</td>
+                            <td><img src="{{ asset('uploads/students/'.$branch->imgCN)}}" width="70px"
+                                     height="70px" alt="logo" /></td>
+                            <td>
+                            <td>
+                                <a href="{{ route('branch.edit', ['maCN' => $branch->maCN]) }}"
+                                   class="btn btn-primary">Edit</a>
+
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
+                <div> {{ $branches->links() }}</div>
             </div>
         </div>
     </main>

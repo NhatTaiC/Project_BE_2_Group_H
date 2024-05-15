@@ -7,42 +7,39 @@
                 <div class="col-md-4 pt-5">
                     <div class="card mx-auto border-dark my-5" style="width: 600px;">
                         <h3 class="card-header text-center">
-                            Thêm Liên Hệ
+                            Thêm Chi Nhánh
                         </h3>
                         <div class="card-body">
-                            <form action="{{ route('relationship.postRelationship') }}" method="post">
+                            <form action="{{ route('branch.postBranch') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <table class="table table-borderless">
                                     <tr>
-                                        <td class="td-left">Mã liên hệ:</td>
-                                        <td class="td-right"><input type="text" id="maLienHe" class="td-right-username form-control"
-                                                                    name="maLienHe" required autofocus>
-                                            @if ($errors->has('maLienHe'))
-                                                <span class="text-danger">{{ $errors->first('maLienHe') }}</span>
-                                            @endif
+                                        <td class="td-left">Mã Chi Nhánh:</td>
+                                        <td class="td-right"><input type="text" id="maCN" class="td-right-username form-control"
+                                                                    name="maCN" required autofocus>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="td-left">Tên Phòng Ban:</td>
-                                        <td class="td-right"><input type="text" id="tenPhongBan" class="td-right-mk form-control"
-                                                                    name="tenPhongBan" required autofocus>
-                                            @if ($errors->has('tenPhongBan'))
-                                                <span class="text-danger">{{ $errors->first('tenPhongBan') }}</span>
-                                            @endif
+                                        <td class="td-left">Tên Chi Nhánh:</td>
+                                        <td class="td-right"><input type="text" id="tenCN" class="td-right-mk form-control"
+                                                                    name="tenCN" required autofocus>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="td-left">Số Điện Thoại:</td>
-                                        <td class="td-right"><input type="text" id="soDT" class="td-right-mk form-control"
-                                                                    name="soDT" required autofocus>
-                                            @if ($errors->has('soDT'))
-                                                <span class="text-danger">{{ $errors->first('soDT') }}</span>
-                                            @endif
+                                        <td class="td-left">Địa chỉ Chi Nhánh:</td>
+                                        <td class="td-right"><input type="text" id="diaChiCN" class="td-right-mk form-control"
+                                                                    name="diaChiCN" required autofocus>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="td-left"></td>
-                                        <td class="td-right"></td>
+                                        <td class="td-left">Số điện thoại Chi Nhánh:</td>
+                                        <td class="td-right"><input type="text" id="sodtCN" class="td-right-mk form-control"
+                                                                    name="sodtCN" required autofocus>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-left">Hình ảnh:</td>
+                                        <td class="td-right"> <input type="file" class="form-control" id="imgCN" name="imgCN" multiple required></td>
                                     </tr>
                                     <tr>
                                         <td class="td-left"></td>

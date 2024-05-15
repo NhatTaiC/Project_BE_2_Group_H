@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('tenCN');
             $table->string('diaChiCN');
             $table->string('sodtCN');
-            $table->string('imgCN')->nullable();
+            $table->string('imgCN');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -43,7 +43,14 @@ Route::post('addPageRelationship', [\App\Http\Controllers\CrudRelationship::clas
 Route::get('updateRelationship', [\App\Http\Controllers\CrudRelationship::class, 'updateRelationship'])->name('relationship.updateRelationship');
 Route::post('updateRelationship', [\App\Http\Controllers\CrudRelationship::class, 'postUpdateRelationship'])->name('relationship.postUpdateRelationship');
 
-Route::get('listbranches', [\App\Http\Controllers\CrudBranchController::class,'listBranches'])->name('listbranches');
+Route::get('listBranch', [\App\Http\Controllers\CrudBranchController::class,'listBranches'])->name('brach.listbranches');
+
+Route::get('create-branch', [\App\Http\Controllers\CrudBranchController::class, 'createBranch'])->name('branch.createBranch');
+Route::post('create-branch', [\App\Http\Controllers\CrudBranchController::class, 'postBranch'])->name('branch.postBranch');
+
+Route::get('edit-sinhvien/{id}', [StudentController::class, 'edit'])->name('student.edit');
+Route::post('update-sinhvien/{id}', [StudentController::class, 'update'])->name('student.update');
+
 
 //                       _oo0oo_
 //                      o8888888o
