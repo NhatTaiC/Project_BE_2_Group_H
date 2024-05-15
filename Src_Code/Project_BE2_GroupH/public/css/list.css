@@ -1,0 +1,17 @@
+tr:hover > td {
+    background: hotpink;
+}
+
+.th-data {
+    text-align: center;
+    vertical-align: baseline;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.td-data {
+    text-align: center;
+    vertical-align: baseline;
+    font-weight: 700;
+    font-size: 30px;
+}
