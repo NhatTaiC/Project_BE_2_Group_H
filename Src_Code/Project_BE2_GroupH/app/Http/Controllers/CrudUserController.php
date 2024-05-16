@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Hash;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Session;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
-
+use Illuminate\Support\Facades\File;
 /**
  * CRUD User controller
  */
@@ -35,11 +34,11 @@ class CrudUserController extends Controller
             'password' => 'required',
         ]);
 
-        $credentials = $request->only('email', 'password');
+       $credentials = $request->only('email', 'password');
+
         if (Auth::attempt($credentials)) {
-//            return redirect()->intended('list')
-//                ->withSuccess('Signed in');
-            return view('management_page');
+            return redirect()->intended('list')
+                ->withSuccess('Signed in');
         }
 
         return redirect("login")->withSuccess('Login details are not valid');
@@ -50,7 +49,7 @@ class CrudUserController extends Controller
      */
     public function createUser()
     {
-        return view('crud_user.create_user');
+        return view('crud_user.create');
     }
 
     /**
@@ -58,25 +57,25 @@ class CrudUserController extends Controller
      */
     public function postUser(Request $request)
     {
-        // Kiểm tra dữ liệu đầu vào
+        //kiem tra du lieu  dau vao
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
             'phone' => 'required|min:10',
-            'mssv' => 'required',
-            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
 
-        // Kiểm tra xem tệp tin có trường dữ liệu avatar hay kh?
-        if ($request->hasFile('avatar')) {
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+
+        ]);
+         //Kiem tra tep tin co truong du lieu avatar hay kh
+         if($request->hasFile('avatar')){
             $file = $request->file('avatar');
-            $extension = $file->getClientOriginalExtension(); // Lấy tên mở rộng .jpg, .png
-            $filename = time() . '.' . $extension;
-            $file->move('avatar/', $filename); // Upload lên thư mục avatar trong public
+            $extension = $file->getClientOriginalExtension();//Lay ten mo rong .jpg, .png...
+            $filename = time().'.'.$extension;//
+            $file->move('avatar/',$filename) ;  //upload len thu muc avatar trong piblic
         }
 
-        // Lấy tất cả cơ sở dữ liệu đổ vào $data
+        //Lay tat ca co so du lieu gan vao mang data
         $data = $request->all();
 
         $check = User::create([
@@ -84,33 +83,35 @@ class CrudUserController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'phone' => $data['phone'],
-            'mssv' => $data['mssv'],
+
             'avatar' => $filename ?? NULL,
+            // 'avatar' => $avatarName ?? NULL,
+
         ]);
 
-        return redirect("list")->withSuccess('You have signed-in');
+            return redirect("login")->withSuccess('Đăng ký thành công!');
     }
 
     /**
      * View user detail page
      */
-    public function readUser(Request $request)
-    {
+    public function readUser(Request $request) {
         $user_id = $request->get('id');
+        // trả về biến thông tin user
         $user = User::find($user_id);
 
-        return view('crud_user.read_user', ['user' => $user]);
+        return view('crud_user.read', ['user' => $user]);
     }
 
     /**
      * Delete user by id
      */
-    public function deleteUser(Request $request)
-    {
+    public function deleteUser(Request $request) {
         $user_id = $request->get('id');
         $user = User::destroy($user_id);
 
-        return redirect("list")->withSuccess('You have signed-in');
+        return redirect("list")->withSuccess('Bạn đã xóa user thành công!');
+        // return view('crud_user.list');
     }
 
     /**
@@ -118,10 +119,10 @@ class CrudUserController extends Controller
      */
     public function updateUser(Request $request)
     {
+        //tim user theo id
         $user_id = $request->get('id');
         $user = User::find($user_id);
-
-        return view('crud_user.update_user', ['user' => $user]);
+        return view('crud_user.update', ['user' => $user]);
     }
 
     /**
@@ -129,39 +130,54 @@ class CrudUserController extends Controller
      */
     public function postUpdateUser(Request $request)
     {
-
         $input = $request->all();
 
-        $user = User::find($input['id']);
-        $user->name = $input['name'];
-        $user->email = $input['email'];
-        $user->password = $input['password'];
-        $user->phone = $input['phone'];
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,id,'.$input['id'],
+            'password' => 'required|min:6',
+            'phone' => 'required|min:10',
+            //'mssv' => 'required',
 
-        if ($request->hasFile('avatar')) {
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-            $anhcu = 'avatar/' . $user->avatar;
 
-            // Có file đính kèm trong form update thì tìm file cũ và xóa đi
-            // Nếu $anhcu tồn tại thì xóa đi, nếu kh có thì kh xóa
-            if (File::exists($anhcu)) {
-                File::delete($anhcu);
-            }
+
+       $user = User::find($input['id']);
+       $user->name = $input['name'];
+       $user->email = $input['email'];
+       $user->password = $input['password'];
+       $user->phone = $input['phone'];
+
+          //Kiem tra tep tin co truong du lieu avatar hay kh
+          if($request->hasFile('avatar')){
+
+            //co file dinh kem trong form update thi tim file cu va xoa di
+            //Neu $anhcu ton tai thi xoa no di , neu kh co thi kh xoa
+            // $anhcu = 'avatar/user.jpg';
+            // if(File::exists($anhcu)){
+            //     File::delete($anhcu);
+            // }
+
+              $anhcu = 'avatar' . $user->avatar;
+              if (File::exists($anhcu)) {
+
+                  if (strpos($anhcu, 'default') == null){
+                      File::delete($anhcu);
+                  }
+
+              }
 
             $file = $request->file('avatar');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('avatar/', $filename);
-            $user->avatar = $filename;
+            $extension = $file->getClientOriginalExtension();//Lay ten mo rong .jpg, .png...
+            $filename = time().'.'.$extension;//
+            $file->move('avatar/',$filename) ;  //upload len thu muc avatar trong piblic
         }
-
-        $user->mssv = $input['mssv'];
-
+        $user->avatar = $filename;
         $user->update();
 
-
-        return redirect("list")->withSuccess('You have signed-in');
-
+        return redirect("list")->withSuccess('Bạn đã sửa user thành công');
     }
 
     /**
@@ -169,24 +185,36 @@ class CrudUserController extends Controller
      */
     public function listUser()
     {
-        if (Auth::check()) {
-            //$users = User::all();
-            //$users = DB::table('users')->paginate(5);
-            $users = User::paginate(5);
-            return view('crud_user.list_user', ['users' => $users]);
+        $users = User::paginate(8);
+        if(Auth::check()){
+            // $users = User::all();//Lay tat ca du lieu trong ban user
+            return view('crud_user.list', ['users' => $users]);//->with('i',(request()->input('page',1)-1)*2);
         }
 
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return view('crud_user.list', ['users' => $users]);
+    }
+    public function searchUser(Request $request)
+    {
+    //    $tukhoa  = input::get('tukhoa');
+        $tukhoa = ($request->has('tukhoa')) ? $request->query('tukhoa') : "";
+        $tukhoa = trim(strip_tags($tukhoa));
+        $listsp = [];
+        if ($tukhoa != "") {
+            $listsp = DB::table("users")->where("id", "like", "%$tukhoa%")->orWhere("name", "like", "%$tukhoa%")
+            ->orWhere("email", "like", "%$tukhoa%")->get();
+        }
+
+
+        return view('crud_user.list', ['listsp' => $listsp]);
     }
 
     /**
      * Sign out
      */
-    public function signOut()
-    {
+    public function signOut() {
         Session::flush();
         Auth::logout();
 
-        return Redirect('login');
+        return Redirect('login')->withSuccess('Bạn đã đăng xuất!');
     }
 }
