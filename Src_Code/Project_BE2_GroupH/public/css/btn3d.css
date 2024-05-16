@@ -1,0 +1,45 @@
+.btn-3d {
+    position: relative;
+    display: flex;
+    width: 150px;
+    height: 50px;
+    perspective: 800px;
+    /* display: inline-block; */
+    margin: auto;
+    
+    
+}
+
+
+.btn-3d a {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.btn-3d a .front,
+.btn-3d a .top {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+.btn-3d a .front {
+    color: #fff;
+    /* background: #000; */
+    transform: translateZ(25px);
+}
+
+.btn-3d a .top {
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.btn-3d a:hover {
+    transform: rotateX(-90deg);
+}

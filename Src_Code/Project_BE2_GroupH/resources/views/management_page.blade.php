@@ -17,8 +17,8 @@
         <div class="container-fluid mt-5 center">
             <ul class="ul-option">
                 <li><a href="{{ route('user.list') }}" class="ul-item text-decoration-none">Management TaiKhoan</a></li>
-                <li><a href="#" class="ul-item text-decoration-none">Management LoaiXe</a></li>
-                <li><a href="#" class="ul-item text-decoration-none">Management Xe</a></li>
+                <li><a href="{{ route('loaixe.list_loaixe') }}" class="ul-item text-decoration-none">Management LoaiXe</a></li>
+                <li><a href="{{ route('xe.list_xe') }}" class="ul-item text-decoration-none">Management Xe</a></li>
                 <li><a href="#" class="ul-item text-decoration-none">Management ChiTietXe</a></li>
                 <li><a href="#" class="ul-item text-decoration-none">Management ChiNhanh</a></li>
                 <li><a href="#" class="ul-item text-decoration-none">Management LichHen</a></li>
