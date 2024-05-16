@@ -41,7 +41,7 @@ Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
 /* Home */
 Route::get('home', [HomeController::class, 'HomePage'])->name('home');
-
+Route::get('management_page', [HomeController::class, 'HomePage'])->name('management_page');
 /* LoaiXe */
 Route::get('create_loaixe', [CrudLoaiXeController::class, 'createLoaiXe'])->name('loaixe.createLoaiXe');
 Route::post('create_loaixe', [CrudLoaiXeController::class, 'postLoaiXe'])->name('loaixe.postLoaiXe');

@@ -1,15 +1,14 @@
 .btn {
-    background-color: #b0def5;
+    background-color: #71a4bf;
     padding: 14px 40px;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
     cursor: pointer;
     border-radius: 10px;
-    border: 2px dashed #b0def5;
+    border: 2px dashed #71a4bf;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     transition: .4s;
-    display: inline-block;
    }
    
    .btn span:last-child {
@@ -18,9 +17,9 @@
    
    .btn:hover {
     transition: .4s;
-    border: 2px dashed #b0def5;
+    border: 2px dashed #71a4bf;
     background-color: #fff;
-    color: #b0def5;
+    color: #71a4bf;
    }
    
    .btn:active {

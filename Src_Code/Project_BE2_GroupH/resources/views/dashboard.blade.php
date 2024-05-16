@@ -24,7 +24,7 @@
                     @guest
                        {{-- Login --}}
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link text-white" href="{{ route('management_page') }}">Login</a>
                         </li>
 
                        {{-- CreateUser --}}
