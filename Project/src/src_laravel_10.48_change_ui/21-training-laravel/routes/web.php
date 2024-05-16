@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CrudRelationship;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 
@@ -34,25 +35,24 @@ Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
 Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
 
-Route::get('deleteRelationship', [\App\Http\Controllers\CrudRelationship::class, 'deleteRelationship'])->name('relationship.deleteRelationship');
-Route::get('listRelationship', [\App\Http\Controllers\CrudRelationship::class, 'index'])->name('relationship.index');
+Route::get('deleteRelationship', [CrudRelationship::class, 'deleteRelationship'])->name('relationship.deleteRelationship');
+Route::get('listRelationship', [CrudRelationship::class, 'index'])->name('relationship.index');
 
-Route::get('addPageRelationship', [\App\Http\Controllers\CrudRelationship::class, 'addPageRelationship'])->name('relationship.addPageRelationship');
-Route::post('addPageRelationship', [\App\Http\Controllers\CrudRelationship::class, 'postRelationship'])->name('relationship.postRelationship');
+Route::get('addPageRelationship', [CrudRelationship::class, 'addPageRelationship'])->name('relationship.addPageRelationship');
+Route::post('addPageRelationship', [CrudRelationship::class, 'postRelationship'])->name('relationship.postRelationship');
 
-Route::get('updateRelationship', [\App\Http\Controllers\CrudRelationship::class, 'updateRelationship'])->name('relationship.updateRelationship');
-Route::post('updateRelationship', [\App\Http\Controllers\CrudRelationship::class, 'postUpdateRelationship'])->name('relationship.postUpdateRelationship');
+Route::get('updateRelationship', [CrudRelationship::class, 'updateRelationship'])->name('relationship.updateRelationship');
+Route::post('updateRelationship', [CrudRelationship::class, 'postUpdateRelationship'])->name('relationship.postUpdateRelationship');
 
-Route::get('listBranch', [\App\Http\Controllers\CrudBranchController::class,'listBranches'])->name('brach.listbranches');
+Route::get('listBranch', [\App\Http\Controllers\CrudBranchController::class, 'listBranches'])->name('branch.listBranches');
 
-Route::get('create-branch', [\App\Http\Controllers\CrudBranchController::class, 'createBranch'])->name('branch.createBranch');
-Route::post('create-branch', [\App\Http\Controllers\CrudBranchController::class, 'postBranch'])->name('branch.postBranch');
+Route::get('addBranch', [\App\Http\Controllers\CrudBranchController::class, 'createBranch'])->name('branch.createBranch');
+Route::post('addBranch', [\App\Http\Controllers\CrudBranchController::class, 'postBranch'])->name('branch.postBranch');
 
-Route::get('edit-sinhvien/{maCN}', [\App\Http\Controllers\CrudBranchController::class, 'edit'])->name('branch.edit');
-Route::post('update-sinhvien/{maCN}', [\App\Http\Controllers\CrudBranchController::class, 'update'])->name('branch.update');
+Route::get('updateBranch', [\App\Http\Controllers\CrudBranchController::class, 'editBranch'])->name('branch.editBranch');
+Route::post('updateBranch', [\App\Http\Controllers\CrudBranchController::class, 'updateBranch'])->name('branch.updateBranch');
 
-Route::delete('delete-sinhvien/{maCN}', [App\Http\Controllers\CrudBranchController::class, 'delete'])->name('student.delete');
-
+Route::get('deleteBranch', [App\Http\Controllers\CrudBranchController::class, 'deleteBranch'])->name('branch.deleteBranch');
 
 //                       _oo0oo_
 //                      o8888888o

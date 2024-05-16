@@ -21,7 +21,7 @@ class CrudBranchController extends Controller
 
     public  function listBranches()
     {
-        $branches = Branch::paginate(10);
+        $branches = Branch::all();
         return view('crud_branch.list_branch',compact('branches'));
     }
 
@@ -42,7 +42,7 @@ class CrudBranchController extends Controller
             $file = $request->file('imgCN');
             $extension = $file->getClientOriginalExtension(); //lay ten mo rong .jpg, .png,....
             $filename = time() . '.' . $extension;
-            $file->move('uploads/students/', $filename);  //upload len thu muc uploads/students
+            $file->move('uploads/branches/', $filename);  //upload len thu muc uploads/students
             $branch->imgCN = $filename;
         }
         $branch->save();
@@ -52,46 +52,53 @@ class CrudBranchController extends Controller
     }
 
 
-    public function edit($maCN)
+    public function editBranch(Request $request)
     {
         //tim branch theo id
-        $branch = Branch::find($maCN);
-        return view('crud_branch.update_branch', compact('branch'));
+//        $branch = Branch::find($maCN);
+//        return view('crud_branch.update_branch', compact('branch'));
+        $branch_id = $request->get('branch_id');
+        $branch = Branch::find($branch_id);
+        return view('crud_branch.update_branch', ['branch'=>$branch]);
+
+
     }
 
-    public function update(Request $request, $maCN)
+    public function updateBranch(Request $request)
     {
-        //tim student theo id
-        $branch = Branch::find($maCN);
+        $branch = Branch::find($request->get('branch_id'));
+        $branch->maCN = $request->input('maCN');
         $branch->tenCN = $request->input('tenCN');
         $branch->diaChiCN = $request->input('diaChiCN');
         $branch->sodtCN = $request->input('sodtCN');
         if ($request->hasFile('imgCN')) {
             //co file dinh kem trong form update thi tim file cu va xoa di
             //neu truoc do ko co anh dai dien cu thi ko xoa
-            $anhcu = 'uploads/students/' . $branch->imgCN;
+            $anhcu = 'uploads/branches/' . $branch->imgCN;
             if (File::exists($anhcu)) {
                 File::delete($anhcu);
             }
             $file = $request->file('imgCN');
             $extension = $file->getClientOriginalExtension(); //lay ten mo rong .jpg, .png,....
             $filename = time() . '.' . $extension;
-            $file->move('uploads/students/', $filename);  //upload len thu muc uploads/students
+            $file->move('uploads/branches/', $filename);  //upload len thu muc uploads/students
             $branch->imgCN = $filename;
         }
         $branch->update();
         return redirect()->back()->with('status', 'Cap nhat sinh vien voi anh dai dien thanh cong');
     }
 
-    public function delete($maCN)
+    public function deleteBranch(Request $request)
     {
-        $branch = Branch::find($maCN);
-        $anhdaidien = 'uploads/students/' . $branch->imgCN;
+//        $branch = Branch::find($maCN);
+        $branch_id = $request->get('branch_id');
+        $anhdaidien = 'uploads/branches/' . $branch->imgCN;
         if (File::exists($anhdaidien)) {
             File::delete($anhdaidien);
         }
-        $branch->delete();
-        return redirect()->back()->with('status', 'Xóa sinh viên và ảnh đại diện thành công');
+        $branch = Branch::destroy($branch_id);
+//        $branch->delete();
+        return redirect("listBranch");
     }
 
 }

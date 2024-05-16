@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('branches', function (Blueprint $table) {
+            $table->increments('branch_id');
             $table->string('maCN');
             $table->string('tenCN');
             $table->string('diaChiCN');
