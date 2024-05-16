@@ -7,7 +7,7 @@
                 <div class="col-md-4 pt-5">
                     <div class="card mx-auto border-dark my-5" style="width: 600px;">
                         <h3 class="card-header text-center">
-                            Thêm Liên Hệ
+                            Thêm Chi Nhánh
                         </h3>
                         <div class="card-body">
                             <form action="{{route('branch.createBranch')}}" method="post" enctype="multipart/form-data">
@@ -51,19 +51,16 @@
                                     </tr>
                                     <tr>
                                         <td class="td-left">Anh Chi Nhánh:</td>
-                                        <input type="file" name="imgCN" id="" class="form-control">
+                                        <td><input type="file" name="imgCN" id="" class="form-control">
                                             @if ($errors->has('imgCN'))
                                                 <span class="text-danger">{{ $errors->first('imgCN') }}</span>
-                                            @endif
-                                        </td>
+                                            @endif</td>
                                     </tr>
                                     <tr>
-                                       <td>
-                                        <td class="td-left"></td>
+                                        <td class="td-left btn btn-block"><a href="{{route('branch.listBranches')}}">Về Trang Danh Sách</a></td>
                                         <td class="td-right">
                                             <button class="btn btn-dark btn-block">Thêm Chi Nhánh Mới</button>
                                         </td>
-                                       </td>
                                     </tr>
                                 </table>
                             </form>

@@ -8,7 +8,9 @@
 
                 <form action="" method="POST" class="form-inline" role="form">
                     <div class="form-group">
+                        <div class="form-controller">
 
+                        </div>
                     </div>
                 </form>
 
@@ -36,8 +38,7 @@
                             <td class="text-center">{{ $branch->diaChiCN }}</td>
                             <td><img src="{{ asset('uploads/branches/'.$branch->imgCN)}}" width="70px"
                                      height="70px" alt="Anh dai dien" /></td>
-                            <td>
-                            <td>
+                            <td class="text-center">
 {{--                                <a href="{{ route('branch.editBranch', ['maCN' => $branch->maCN]) }}"--}}
 {{--                                   class="btn btn-primary">Edit</a>--}}
                                 <a href="{{ route('branch.editBranch', ['branch_id' => $branch->branch_id]) }}"
@@ -49,7 +50,8 @@
                     @endforeach
                     </tbody>
                 </table>
-
+                <a href="{{route('branch.createBranch')}}">Thêm Chi Nhánh</a>
+                <div> {{ $branches->links() }}</div>
             </div>
         </div>
     </main>

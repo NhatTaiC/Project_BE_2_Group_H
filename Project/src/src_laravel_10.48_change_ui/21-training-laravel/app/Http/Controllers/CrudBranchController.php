@@ -21,7 +21,8 @@ class CrudBranchController extends Controller
 
     public  function listBranches()
     {
-        $branches = Branch::all();
+//        $branches = Branch::all();
+        $branches = DB::table('branches')->paginate(1);
         return view('crud_branch.list_branch',compact('branches'));
     }
 
@@ -47,7 +48,7 @@ class CrudBranchController extends Controller
         }
         $branch->save();
 
-        return redirect()->back()->with('status','Them sinh vien thanh cong');
+        return redirect("listBranch");
 //        return redirect("list_branch")->withSuccess('status','You have signed-in');
     }
 
@@ -60,7 +61,6 @@ class CrudBranchController extends Controller
         $branch_id = $request->get('branch_id');
         $branch = Branch::find($branch_id);
         return view('crud_branch.update_branch', ['branch'=>$branch]);
-
 
     }
 
@@ -85,17 +85,17 @@ class CrudBranchController extends Controller
             $branch->imgCN = $filename;
         }
         $branch->update();
-        return redirect()->back()->with('status', 'Cap nhat sinh vien voi anh dai dien thanh cong');
+        return redirect("listBranch");
     }
 
     public function deleteBranch(Request $request)
     {
 //        $branch = Branch::find($maCN);
         $branch_id = $request->get('branch_id');
-        $anhdaidien = 'uploads/branches/' . $branch->imgCN;
-        if (File::exists($anhdaidien)) {
-            File::delete($anhdaidien);
-        }
+//        $anhdaidien = 'uploads/branches/' . $branch_id->imgCN;
+//        if (File::exists($anhdaidien)) {
+//            File::delete($anhdaidien);
+//        }
         $branch = Branch::destroy($branch_id);
 //        $branch->delete();
         return redirect("listBranch");

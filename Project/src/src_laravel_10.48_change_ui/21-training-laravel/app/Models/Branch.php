@@ -25,7 +25,6 @@ class Branch extends Authenticatable
     public $incrementing = true;
     protected $fillable = [
         'maCN',
-//        'branch_id',
         'tenCN',
         'diaChiCN',
         'sodtCN',
