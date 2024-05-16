@@ -27,12 +27,12 @@
                             <a class="nav-link text-white" href="{{ route('home') }}">Home</a>
                         </li>
 
-                       {{-- Login --}}
+                        {{-- Login --}}
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('login') }}">Login</a>
                         </li>
 
-                       {{-- CreateUser --}}
+                        {{-- CreateUser --}}
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('user.createUser') }}">Register</a>
                         </li>
@@ -42,7 +42,7 @@
                             <a class="nav-link text-white" href="{{ route('management_page') }}">Management Page</a>
                         </li>
 
-                       {{-- Dropdown --}}
+                        {{-- Dropdown --}}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                data-bs-toggle="dropdown">Management</a>

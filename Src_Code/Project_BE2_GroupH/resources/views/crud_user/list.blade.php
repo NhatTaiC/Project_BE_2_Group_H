@@ -547,4 +547,3 @@ use Illuminate\Pagination\Paginator;
     <?php } ?>
 
 @endsection
-

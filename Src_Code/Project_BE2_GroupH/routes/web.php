@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CrudBranchController;
 use App\Http\Controllers\CrudLoaiXeController;
+use App\Http\Controllers\CrudRelationship;
 use App\Http\Controllers\CrudXeController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -16,10 +18,10 @@ use App\Http\Controllers\CrudUserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-/* DashBoard */
-Route::get('dashboard', [CrudUserController::class, 'dashboard']);
 
 /* User */
+Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 
@@ -34,8 +36,6 @@ Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.upda
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
 
 Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
-
-Route::get('search', [CrudUserController::class, 'searchUser'])->name('user.search');
 
 Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
@@ -79,6 +79,48 @@ Route::post('search_xebyname_bysheet', [CrudXeController::class, 'searchXeByName
 Route::get('sortxeprice_desc', [CrudXeController::class, 'sortXeByPrice_Desc'])->name('xe.sortxeprice_desc');
 Route::get('sortxeprice_asc', [CrudXeController::class, 'sortXeByPrice_Asc'])->name('xe.sortxeprice_asc');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Relationship */
+Route::get('deleteRelationship', [CrudRelationship::class, 'deleteRelationship'])->name('relationship.deleteRelationship');
+Route::get('listRelationship', [CrudRelationship::class, 'index'])->name('relationship.index');
+
+Route::get('addPageRelationship', [CrudRelationship::class, 'addPageRelationship'])->name('relationship.addPageRelationship');
+Route::post('addPageRelationship', [CrudRelationship::class, 'postRelationship'])->name('relationship.postRelationship');
+
+Route::get('updateRelationship', [CrudRelationship::class, 'updateRelationship'])->name('relationship.updateRelationship');
+Route::post('updateRelationship', [CrudRelationship::class, 'postUpdateRelationship'])->name('relationship.postUpdateRelationship');
+
+/* Branch */
+Route::get('listBranch', [CrudBranchController::class, 'listBranches'])->name('branch.listBranches');
+
+Route::get('addBranch', [CrudBranchController::class, 'createBranch'])->name('branch.createBranch');
+Route::post('addBranch', [CrudBranchController::class, 'postBranch'])->name('branch.postBranch');
+
+Route::get('updateBranch', [CrudBranchController::class, 'editBranch'])->name('branch.editBranch');
+Route::post('updateBranch', [CrudBranchController::class, 'updateBranch'])->name('branch.updateBranch');
+
+Route::get('deleteBranch', [CrudBranchController::class, 'deleteBranch'])->name('branch.deleteBranch');
+
+Route::post('searchBranch', [CrudBranchController::class, 'searchBranch'])->name('branch.searchBranch');
+
+//                       _oo0oo_
+//                      o8888888o
+//                      88" . "88
+//                      (| -_- |)
+//                      0\  =  /0
+//                    ___/`---'\___
+//                  .' \\|     |// '.
+//                 / \\|||  :  |||// \
+//                / _||||| -:- |||||- \
+//               |   | \\\  -  /// |   |
+//               | \_|  ''\---/''  |_/ |
+//               \  .-\__  '-'  ___/-. /
+//             ___'. .'  /--.--\  `. .'___
+//          ."" '<  `.___\_<|>_/___.' >' "".
+//         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+//         \  \ `_.   \_ __\ /__ _/   .-` /  /
+//     =====`-.____`.___ \_____/___.-`___.-'=====
+//                       `=---='
+//
+//     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//            Phật phù hộ, không bao giờ BUG
+//     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
