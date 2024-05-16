@@ -44,6 +44,32 @@ Route::get('management_page', [HomeController::class, 'ManagePage'])->name('mana
 
 /* Home Page */
 Route::get('home', [HomeController::class, 'HomePage'])->name('home');
+Route::get('management_page', [HomeController::class, 'HomePage'])->name('management_page');
+/* LoaiXe */
+Route::get('create_loaixe', [CrudLoaiXeController::class, 'createLoaiXe'])->name('loaixe.createLoaiXe');
+Route::post('create_loaixe', [CrudLoaiXeController::class, 'postLoaiXe'])->name('loaixe.postLoaiXe');
+
+Route::get('read_loaixe', [CrudLoaiXeController::class, 'readLoaiXe'])->name('loaixe.readLoaiXe');
+
+Route::get('delete_loaixe', [CrudLoaiXeController::class, 'deleteLoaiXe'])->name('loaixe.deleteLoaiXe');
+
+Route::get('update_loaixe', [CrudLoaiXeController::class, 'updateLoaiXe'])->name('loaixe.updateLoaiXe');
+Route::post('update_loaixe', [CrudLoaiXeController::class, 'postUpdateLoaiXe'])->name('loaixe.postUpdateLoaiXe');
+
+Route::get('list_loaixe', [CrudLoaiXeController::class, 'listLoaiXe'])->name('loaixe.list_loaixe');
+
+/* Xe */
+Route::get('create_xe', [CrudXeController::class, 'createXe'])->name('xe.createXe');
+Route::post('create_xe', [CrudXeController::class, 'postXe'])->name('xe.postXe');
+
+Route::get('read_xe', [CrudXeController::class, 'readXe'])->name('xe.readXe');
+
+Route::get('delete_xe', [CrudXeController::class, 'deleteXe'])->name('xe.deleteXe');
+
+Route::get('update_xe', [CrudXeController::class, 'updateXe'])->name('xe.updateXe');
+Route::post('update_xe', [CrudXeController::class, 'postUpdateXe'])->name('xe.postUpdateXe');
+
+Route::get('list_xe', [CrudXeController::class, 'listXe'])->name('xe.list_xe');
 
 /* LoaiXe */
 Route::get('create_loaixe', [CrudLoaiXeController::class, 'createLoaiXe'])->name('loaixe.createLoaiXe');

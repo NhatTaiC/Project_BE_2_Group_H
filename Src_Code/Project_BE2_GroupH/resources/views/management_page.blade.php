@@ -2,6 +2,12 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/management_page.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/btnsapxep.css') }}">
+  <style>
+    .btn-sapxep{
+        text-align: center;
+    }
+  </style>
 
     {{-- Section Title --}}
     <section id="section-title">
