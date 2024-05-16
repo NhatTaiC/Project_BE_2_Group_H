@@ -107,7 +107,7 @@
                                 </div>
 
                                 <div class="d-grid mx-auto">
-                                    <button type="submit" class="btn btn-dark btn-block">Update</button>
+                                    <button type="submit" class="btn btn-dark btn-block">Create</button>
                                 </div>
                             </form>
                         </div>

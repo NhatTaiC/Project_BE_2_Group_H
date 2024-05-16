@@ -82,6 +82,26 @@
                     <a href="{{ route('xe.createXe') }}" class="btn-them text-decoration-none text-white" style="font-weight: 700; font-size: 20px">Thêm Xe</a>
                 </button>
 
+                {{-- Nút Tìm Kiếm --}}
+                <button class="btn btn-warning p-3 ms-2" type="button" style="width: 30%">
+                    <a href="{{ route('xe.searchXe') }}" class="btn-them text-decoration-none text-white" style="font-weight: 700; font-size: 20px">Tìm Kiếm Thông Tin Xe</a>
+                </button>
+
+                {{-- Nút Sắp Xếp --}}
+                <button class="btn btn-success p-3 ms-2" type="button" style="width: 30%">
+                    <a href="{{ route('xe.sortxeprice_desc') }}" class="btn-them text-decoration-none text-white" style="font-weight: 700; font-size: 20px">Sắp Xếp Theo Giá Xe Giảm Dần</a>
+                </button>
+
+                {{-- Nút Sắp Xếp --}}
+                <button class="btn btn-info p-3 mt-2 me-2" type="button" style="width: 30%">
+                    <a href="{{ route('xe.sortxeprice_asc') }}" class="btn-them text-decoration-none text-white" style="font-weight: 700; font-size: 20px">Sắp Xếp Theo Giá Xe Tăng Dần</a>
+                </button>
+
+                {{-- Nút Reset --}}
+                <button class="btn btn-danger p-3 mt-2" type="button" style="width: 30%">
+                    <a href="{{ route('xe.list_xe') }}" class="btn-them text-decoration-none text-white" style="font-weight: 700; font-size: 20px">Reset</a>
+                </button>
+
                 {{-- Phân Trang --}}
                 <div class="link text-center my-5 mx-5 px-5" style="text-align: center">{!! $xe->links() !!}</div>
 
