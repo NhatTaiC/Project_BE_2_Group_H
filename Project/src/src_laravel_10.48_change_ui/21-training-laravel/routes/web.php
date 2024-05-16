@@ -54,6 +54,8 @@ Route::post('updateBranch', [\App\Http\Controllers\CrudBranchController::class, 
 
 Route::get('deleteBranch', [App\Http\Controllers\CrudBranchController::class, 'deleteBranch'])->name('branch.deleteBranch');
 
+Route::post('searchBranch', [App\Http\Controllers\CrudBranchController::class, 'searchBranch'])->name('branch.searchBranch');
+
 //                       _oo0oo_
 //                      o8888888o
 //                      88" . "88

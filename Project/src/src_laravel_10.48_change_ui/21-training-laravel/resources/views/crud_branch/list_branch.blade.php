@@ -5,13 +5,10 @@
         <div class="container my-5 pt-5">
             <div class="container-fluid py-2 text-center">
                 <h2 style="font-weight: bold;">Danh Sách Chi Nhánh</h2>
-
-                <form action="" method="POST" class="form-inline" role="form">
-                    <div class="form-group">
-                        <div class="form-controller">
-
-                        </div>
-                    </div>
+                @csrf
+                <form action=""  enctype="multipart/form-data">
+                    <input name="keyWord" class="form-control me-2" type="text" placeholder="Tìm kiếm">
+                    <input name="search" value="Tìm kiếm" class="btn btn-info" type="submit">
                 </form>
 
             </div>

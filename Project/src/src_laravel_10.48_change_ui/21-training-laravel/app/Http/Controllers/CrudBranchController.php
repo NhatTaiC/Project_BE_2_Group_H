@@ -23,6 +23,13 @@ class CrudBranchController extends Controller
     {
 //        $branches = Branch::all();
         $branches = DB::table('branches')->paginate(1);
+
+        if($keyWord = request()->keyWord){
+            $branches = DB::table('branches')->where('maCN','like','%'.$keyWord.'%')
+                ->orWhere('sodtCN','like','%'.$keyWord.'%')
+                ->paginate(1);
+        }
+
         return view('crud_branch.list_branch',compact('branches'));
     }
 
@@ -100,5 +107,20 @@ class CrudBranchController extends Controller
 //        $branch->delete();
         return redirect("listBranch");
     }
+
+//    public function searchBranch(Request $request)
+//    {
+//        $keyWord = $request->get('keyWord');
+//        $maCN = Branch::where('maCN', '=', $keyWord)->get();
+//
+//        if (!empty($maCN)) {
+//            $branch = Branch::find($keyWord);
+//
+//            return view('crud_branch.list_branch', ['branch' => $branch]);
+//        }
+//        else {
+//            return redirect('listBranch')->withSucces("Tìm không thành công!");
+//        }
+//    }
 
 }
