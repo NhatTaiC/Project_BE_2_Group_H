@@ -11,9 +11,9 @@
 	<style>
 
 	</style>
-	<link rel="stylesheet" href="{{ asset('fe/login.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
-	
+
 </head>
 
 <body>
@@ -51,7 +51,7 @@
 			</form>
 		</div>
 
-	
+
 	</div>
 </body>
 
