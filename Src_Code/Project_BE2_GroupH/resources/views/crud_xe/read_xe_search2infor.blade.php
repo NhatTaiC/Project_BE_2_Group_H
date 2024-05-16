@@ -58,6 +58,10 @@
                     @endforeach
                     </tbody>
                 </table>
+
+{{--                --}}{{-- Phân Trang --}}
+{{--                <div class="link text-center my-5 mx-5 px-5" style="text-align: center">{!! $xe->links() !!}</div>--}}
+
             </div>
         </div>
     </main>

@@ -157,9 +157,6 @@ class CrudXeController extends Controller
         ->where('sochongoi', '=', $sochongoi)->get();
 
         if (!empty($xe)) {
-            //$xe = Xe::find($tenxe);
-
-//            return view('crud_xe.list_xe', ['xe' => $xe]);
             return view('crud_xe.read_xe_search2infor', ['xe' => $xe]);
         }
         else {
