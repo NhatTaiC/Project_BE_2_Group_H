@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CrudMakeAppointmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 
@@ -37,3 +38,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('listMakeAppointment', [CrudMakeAppointmentController::class, 'listMakeAppointment'])->name('makeappointment.list');
+Route::get('addMakeAppointment', [CrudMakeAppointmentController::class, 'addMakeAppointment'])->name('makeappointment.add');
+Route::post('addMakeAppointment', [CrudMakeAppointmentController::class, 'storeMakeAppointment'])->name('makeappointment.store');
+Route::get('editMakeAppointment', [CrudMakeAppointmentController::class, 'editMakeAppointment'])->name('makeappointment.edit');
+Route::post('updateMakeAppointment', [CrudMakeAppointmentController::class, 'updateMakeAppointment'])->name('makeappointment.update');
+Route::get('deleteMakeAppointment', [CrudMakeAppointmentController::class, 'deleteMakeAppointment'])->name('makeappointment.delete');
