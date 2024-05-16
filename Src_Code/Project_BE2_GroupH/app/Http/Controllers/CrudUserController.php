@@ -37,7 +37,7 @@ class CrudUserController extends Controller
        $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('list')
+            return redirect()->intended('management_page')
                 ->withSuccess('Signed in');
         }
 

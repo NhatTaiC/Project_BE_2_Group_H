@@ -6,6 +6,7 @@ use App\Models\Xe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Symfony\Component\Console\Input\Input;
 
 class CrudXeController extends Controller
 {
@@ -125,5 +126,54 @@ class CrudXeController extends Controller
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
+    }
+
+    public function searchXe() {
+        return view('crud_xe.search_xe');
+    }
+
+    public function searchXeByID(Request $request) {
+
+        $maxe = $request->get('maxe');
+
+        $xe_id = Xe::where('xe_id', '=', $maxe)->get();
+
+        if (!empty($xe_id)) {
+            $xe = Xe::find($maxe);
+
+            return view('crud_xe.read_xe', ['xe' => $xe]);
+        }
+        else {
+            return redirect('list_xe')->withSucces("Tìm không thành công!");
+        }
+    }
+
+    public function searchXeByName_BySheet(Request $request) {
+
+        $tenxe = $request->get('tenxe');
+        $sochongoi = $request->get('sochongoi');
+
+        $xe = Xe::where('tenxe', 'LIKE', $tenxe . '%')
+        ->where('sochongoi', '=', $sochongoi)->get();
+
+        if (!empty($xe)) {
+            //$xe = Xe::find($tenxe);
+
+//            return view('crud_xe.list_xe', ['xe' => $xe]);
+            return view('crud_xe.read_xe_search2infor', ['xe' => $xe]);
+        }
+        else {
+            return redirect('list_xe')->withSucces("Tìm không thành công!");
+        }
+    }
+
+    public function sortXeByPrice_Desc() {
+        $xe = Xe::orderBy('giaxe', 'desc')->paginate(5);
+        return view('crud_xe.list_xe', ['xe' => $xe]);
+    }
+
+    public function sortXeByPrice_Asc() {
+        $xe = Xe::orderBy('giaxe', 'asc')->paginate(5);
+        return view('crud_xe.list_xe', ['xe' => $xe]);
     }
 }

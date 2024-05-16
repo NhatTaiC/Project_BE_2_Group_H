@@ -7,10 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{{ asset('fe/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
-    
+
     @if (Session::has('success'))
     <div class="alert alert-success">
         <i class="fas fa-check-circle"></i> {{Session::get('success')}}
@@ -33,7 +33,7 @@
                                         @endif
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Email -->
                                     <div class="form-group mb-2">
                                     <div class="row text-center">
@@ -47,7 +47,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Mật khẩu -->
                                     <div class="form-group mb-2">
                                     <div class="row text-center">
@@ -61,7 +61,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Phone -->
                                     <div class="form-group mb-2">
                                     <div class="row text-center">
@@ -74,39 +74,39 @@
                                             </div>
                                         </div>
                                     </div>
-                               
-                                    
-    
+
+
+
                                     <!-- Hinh anh -->
                                     <div class="row mb-3">
                                         <label for="avatar"  style=" padding-right: 50px;"class="col-md-4 col-form-label text-md-end">{{ __('Avatar') }}</label>
-      
+
                                         <div class="col-md-6">
                                             <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar">
-      
+
                                             @error('avatar')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                             @enderror
                                         </div>
-    
+
                                         <!-- <div>
                                             <label for="avatar">Ảnh đại diện</label>
                                             <input id="avatar" type="file" name="avatar" accept="image/*">
                                         </div> -->
                                     </div>
-    
+
                                     <!-- Button -->
-                                 
+
                                             <a href="{{route('login')}}" class="text-black" style="font-weight:bold; text-align: right; text-decoration: none; font-size: 13px;">Bạn đã có tài khoản?</a>
-                                     
+
                                         <button type="submit" style="margin-left:32px;" class="btn btn-info btn-block">Đăng kí</button>
-                                    
-                                        
+
+
                     <!-- hinh anh -->
                     <!-- so dien thoai -->
-             
+
             </form>
         </div>
     </div>

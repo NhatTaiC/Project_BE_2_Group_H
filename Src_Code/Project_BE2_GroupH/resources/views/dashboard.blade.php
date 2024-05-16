@@ -22,6 +22,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     @guest
+                        {{-- Home Page --}}
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('home') }}">Home</a>
+                        </li>
+
                        {{-- Login --}}
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('login') }}">Login</a>
@@ -32,9 +37,9 @@
                             <a class="nav-link text-white" href="{{ route('user.createUser') }}">Register</a>
                         </li>
                     @else
-                        {{-- Home Page --}}
+                        {{-- Management Page --}}
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('home') }}">Home</a>
+                            <a class="nav-link text-white" href="{{ route('management_page') }}">Management Page</a>
                         </li>
 
                        {{-- Dropdown --}}
@@ -69,7 +74,7 @@
 {{-- Footer --}}
 <section class="section-footer mt-5 pt-5">
     <div class="container-fluid text-center bg-dark fixed-bottom p-2">
-        <h1 class="footer-title text-white">Lập Trình Web BE 22024</h1>
+        <h1 class="footer-title text-white">Lập Trình Web BE2 - Nhóm H 2024</h1>
     </div>
 </section>
 

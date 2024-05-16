@@ -7,7 +7,7 @@
     {{--  Title  --}}
     <section class="section-title">
         <div class="container-fluid my-5 text-center">
-            <h1 class="title">Thông Tin Xe {{ $xe->tenxe }}</h1>
+{{--            <h1 class="title">Thông Tin Xe {{ $xe->tenxe }}</h1>--}}
         </div>
     </section>
 

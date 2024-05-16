@@ -39,7 +39,10 @@ Route::get('search', [CrudUserController::class, 'searchUser'])->name('user.sear
 
 Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 
-/* Home */
+/* Management Page */
+Route::get('management_page', [HomeController::class, 'ManagePage'])->name('management_page');
+
+/* Home Page */
 Route::get('home', [HomeController::class, 'HomePage'])->name('home');
 
 /* LoaiXe */
@@ -67,6 +70,13 @@ Route::get('update_xe', [CrudXeController::class, 'updateXe'])->name('xe.updateX
 Route::post('update_xe', [CrudXeController::class, 'postUpdateXe'])->name('xe.postUpdateXe');
 
 Route::get('list_xe', [CrudXeController::class, 'listXe'])->name('xe.list_xe');
+
+Route::get('search_xe', [CrudXeController::class, 'searchXe'])->name('xe.searchXe');
+Route::post('search_xebyid', [CrudXeController::class, 'searchXeByID'])->name('xe.search_xebyid');
+Route::post('search_xebyname_bysheet', [CrudXeController::class, 'searchXeByName_BySheet'])->name('xe.search_xebyname_bysheet');
+
+Route::get('sortxeprice_desc', [CrudXeController::class, 'sortXeByPrice_Desc'])->name('xe.sortxeprice_desc');
+Route::get('sortxeprice_asc', [CrudXeController::class, 'sortXeByPrice_Asc'])->name('xe.sortxeprice_asc');
 
 Route::get('/', function () {
     return view('welcome');
