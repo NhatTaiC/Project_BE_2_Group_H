@@ -16,7 +16,6 @@ class Makeappointment extends Model
 
     protected $fillable = [
         'MaLH',
-        'TenLH',
         'TenKH',
         'SoDTKH',
         'MaLoaiXe',

@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('makeappointments', function (Blueprint $table) {
             $table->increments('makeappointments_id');
             $table->string('MaLH');
-            $table->string('TenLH');
             $table->string('TenKH');
             $table->string('SoDTKH');
             $table->string('MaLoaiXe');

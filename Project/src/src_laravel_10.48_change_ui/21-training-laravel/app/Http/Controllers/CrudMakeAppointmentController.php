@@ -27,7 +27,6 @@ class CrudMakeAppointmentController extends Controller
     public function storeMakeAppointment(Request $request){
         $mkappointment = new Makeappointment;
         $mkappointment->MaLH = $request->input('MaLH');
-        $mkappointment->TenLH = $request->input('TenLH');
         $mkappointment->TenKH = $request->input('TenKH');
         $mkappointment->SoDTKH = $request->input('SoDTKH');
         $mkappointment->MaLoaiXe = $request->input('MaLoaiXe');
@@ -57,7 +56,6 @@ class CrudMakeAppointmentController extends Controller
 
         $makeappointment = Makeappointment::find($request->get('makeappointments_id'));
         $makeappointment->MaLH = $request->input('MaLH');
-        $makeappointment->TenLH = $request->input('TenLH');
         $makeappointment->TenKH = $request->input('TenKH');
         $makeappointment->SoDTKH = $request->input('SoDTKH');
         $makeappointment->MaLoaiXe = $request->input('MaLoaiXe');

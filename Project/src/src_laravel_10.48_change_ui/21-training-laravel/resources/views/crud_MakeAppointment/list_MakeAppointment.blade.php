@@ -24,14 +24,17 @@
                 @endif
                 <div class="card">
                     <div class="card-header">
-                        <h3>DANH SÁCH THÔNG TIN LỊCH HẸN <a href="{{ route('makeappointment.list') }}"
-                            class="btn btn-danger float-end">Back</a></h3>
+                        <h3>DANH SÁCH THÔNG TIN LỊCH HẸN 
+                            <a href="{{ route('makeappointment.list') }}"
+                            class="btn btn-danger float-end">Back</a>
+                            <a href="{{ route('makeappointment.add') }}"
+                            class="btn btn-primary float-end">Add</a></h3> 
                     </div>
                     <form action=""  class="form-inline">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="key" placeholder="Search">
+                            <input type="text" class="form-control" name="key" placeholder="Nhập tên khách hàng hoặc số điện thoại......">
                             <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-search"></i>
+                                <i class="fas fa-search">Search</i>
                             </button>
                         </div>
                     </form>
@@ -39,9 +42,8 @@
                     <div class="card-body">
                         <table class="table table-striped">
                            <thead>
-                            <th>id</th>
+                            <th>STT</th>
                             <th>Mã Liên Hệ</th>
-                            <th>Tên Liên Hệ</th>
                             <th>Tên Khách Hàng</th>
                             <th>SDT Khách Hàng</th>
                             <th>Mã Loại Xe</th>
@@ -54,7 +56,6 @@
                                 <tr>
                                     <td>{{ $makeappointment -> makeappointments_id}}</td>
                                     <td>{{ $makeappointment -> MaLH}}</td>
-                                    <td>{{ $makeappointment -> TenLH}}</td>
                                     <td>{{ $makeappointment -> TenKH}}</td>
                                     <td>{{ $makeappointment -> SoDTKH}}</td>
                                     <td>{{ $makeappointment -> MaLoaiXe}}</td>

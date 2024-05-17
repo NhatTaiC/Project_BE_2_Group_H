@@ -34,10 +34,6 @@
                                 <input type="text" name="MaLH" id="" class="form-control">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="">Tên liên hệ: </label>
-                                <input type="text" name="TenLH" id="" class="form-control">
-                            </div>
-                            <div class="form-group mb-3">
                                 <label for="">Tên khách hàng: </label>
                                 <input type="text" name="TenKH" id="" class="form-control">
                             </div>
