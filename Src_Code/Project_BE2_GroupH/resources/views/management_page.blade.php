@@ -70,7 +70,7 @@
                 <div class="col-md-4">
 
                     <button class="btn">
-                        <a href="#" class="ul-item text-decoration-none">Management LichHen</a>
+                        <a href="{{ route('makeappointment.list') }}" class="ul-item text-decoration-none">Management LichHen</a>
                     </button>
                 </div>
                 <div class="col-md-4">
