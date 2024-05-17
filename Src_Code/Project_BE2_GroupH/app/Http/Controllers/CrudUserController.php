@@ -44,6 +44,7 @@ class CrudUserController extends Controller
 
     }
 
+
     /**
      * Registration page
      */

@@ -21,6 +21,7 @@ use App\Http\Controllers\CrudUserController;
 
 /* User */
 Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+Route::get('branch_boards', [CrudUserController::class, 'branch_boards']);
 
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
@@ -101,6 +102,9 @@ Route::post('updateBranch', [CrudBranchController::class, 'updateBranch'])->name
 Route::get('deleteBranch', [CrudBranchController::class, 'deleteBranch'])->name('branch.deleteBranch');
 
 Route::post('searchBranch', [CrudBranchController::class, 'searchBranch'])->name('branch.searchBranch');
+
+Route::get('sortBranch_desc', [CrudBranchController::class, 'sortBranch_desc'])->name('branch.sortBranch_desc');
+
 
 //                       _oo0oo_
 //                      o8888888o

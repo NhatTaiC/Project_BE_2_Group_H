@@ -63,7 +63,7 @@
                                        <td>
                                         <td class="td-left"><a href="{{route('branch.listBranches')}}">Quay Lại</a></td>
                                         <td class="td-right">
-                                            <button class="btn btn-dark btn-block">Thêm Chi Nhánh Mới</button>
+                                            <button class="btn btn-dark btn-block">Update Chi Nhánh Mới</button>
                                         </td>
                                        </td>
                                     </tr>

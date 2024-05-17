@@ -22,12 +22,12 @@ class CrudBranchController extends Controller
     public  function listBranches()
     {
 //        $branches = Branch::all();
-        $branches = DB::table('branches')->paginate(1);
+        $branches = DB::table('branches')->paginate(3);
 
         if($keyWord = request()->keyWord){
             $branches = DB::table('branches')->where('maCN','like','%'.$keyWord.'%')
                 ->orWhere('sodtCN','like','%'.$keyWord.'%')
-                ->paginate(1);
+                ->paginate(3);
         }
 
         return view('crud_branch.list_branch',compact('branches'));
@@ -38,6 +38,11 @@ class CrudBranchController extends Controller
         return view('crud_branch.add_branch');
     }
 
+    public  function sortBranch_desc()
+    {
+        $branches = Branch::orderBy('maCN', 'desc')->paginate(2);
+        return view('crud_branch.list_branch', ['branches' => $branches]);
+    }
     public function postBranch(Request $request)
     {
 
@@ -83,7 +88,9 @@ class CrudBranchController extends Controller
             //neu truoc do ko co anh dai dien cu thi ko xoa
             $anhcu = 'uploads/branches/' . $branch->imgCN;
             if (File::exists($anhcu)) {
-                File::delete($anhcu);
+                if (strpos($anhcu, 'default_1') == null) {
+                    File::delete($anhcu);
+                }
             }
             $file = $request->file('imgCN');
             $extension = $file->getClientOriginalExtension(); //lay ten mo rong .jpg, .png,....

@@ -1,21 +1,15 @@
-@extends('relationboardship')
+@extends('branch_boards')
 
 @section('content')
     <main class="login-form">
         <div class="container my-5 pt-5">
             <div class="container-fluid py-2 text-center">
                 <h2 style="font-weight: bold;">Danh Sách Chi Nhánh</h2>
-                @csrf
-                <form action=""  enctype="multipart/form-data">
-                    <input name="keyWord" class="form-control me-2" type="text" placeholder="Tìm kiếm">
-                    <input name="search" value="Tìm kiếm" class="btn btn-info" type="submit">
-                </form>
-
             </div>
             <div class="row justify-content-center pb-5">
                 <table class="table table-bordered table:hover">
                     <thead>
-                    <tr>
+                    <tr class="bg-primary">
                         <th class="text-center">Số lượng </th>
                         <th class="text-center">Mã Chi Nhánh</th>
                         <th class="text-center">Tên Chi Nhánh</th>
@@ -47,7 +41,23 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="{{route('branch.createBranch')}}">Thêm Chi Nhánh</a>
+                @csrf
+                <table>
+                    <form action=""  enctype="multipart/form-data">
+                        <td><input name="keyWord" class="form-control me-2" type="text" placeholder="Tìm kiếm" width="20%"></td>
+                        <td><input name="search" value="Tìm kiếm" class="btn btn-info" type="submit"></td>
+                        <td><button class="btn btn-success" type="button" style="width: 60%">
+                                <a href="{{ route('branch.sortBranch_desc') }}" class="btn-them text-decoration-none text-white text-center" style="font-weight: 150; font-size: 10px">Sort maCN</a>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary"> <a href="{{route('branch.createBranch')}}" class="btn-them text-decoration-none text-white btn-primary text-center" style="width: 50%">Thêm Chi Nhánh</a></button>
+                        </td>
+                        <td><button class="btn btn-success" type="button" style="width: 40%">
+                                <a href="{{ route('branch.listBranches') }}" class="btn-them text-decoration-none text-white text-center" style="font-weight: 150; font-size: 10px">reset</a>
+                            </button></td>
+                    </form>
+                </table>
                 <div> {{ $branches->links() }}</div>
             </div>
         </div>
