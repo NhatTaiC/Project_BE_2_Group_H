@@ -51,7 +51,7 @@
                                 <li><a class="dropdown-item" href="{{ route('loaixe.list_loaixe') }}">LoaiXe</a></li>
                                 <li><a class="dropdown-item" href="{{ route('xe.list_xe') }}">Xe</a></li>
                                 <li><a class="dropdown-item" href="#">ChiTietXe</a></li>
-                                <li><a class="dropdown-item" href="#">ChiNhanh</a></li>
+                                <li><a class="dropdown-item" href="{{ route('branch.listBranches') }}">ChiNhanh</a></li>
                                 <li><a class="dropdown-item" href="{{ route('makeappointment.list') }}">LichHen</a></li>
                                 <li><a class="dropdown-item" href="#">LienHe</a></li>
                             </ul>

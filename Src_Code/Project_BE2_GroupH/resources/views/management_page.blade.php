@@ -76,7 +76,7 @@
                 <div class="col-md-4">
 
                     <button class="btn">
-                        <a href="#" class="ul-item text-decoration-none">Management ChiNhanh</a>
+                        <a href="{{ route('branch.listBranches') }}" class="ul-item text-decoration-none">Management ChiNhanh</a>
                     </button>
                 </div>
             </div>
