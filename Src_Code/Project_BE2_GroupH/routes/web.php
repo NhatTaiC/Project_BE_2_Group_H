@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CrudLoaiXeController;
+use App\Http\Controllers\CrudMakeAppointmentController;
 use App\Http\Controllers\CrudXeController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -78,6 +79,14 @@ Route::post('search_xebyname_bysheet', [CrudXeController::class, 'searchXeByName
 
 Route::get('sortxeprice_desc', [CrudXeController::class, 'sortXeByPrice_Desc'])->name('xe.sortxeprice_desc');
 Route::get('sortxeprice_asc', [CrudXeController::class, 'sortXeByPrice_Asc'])->name('xe.sortxeprice_asc');
+
+/* Appointment */
+Route::get('listMakeAppointment', [CrudMakeAppointmentController::class, 'listMakeAppointment'])->name('makeappointment.list');
+Route::get('addMakeAppointment', [CrudMakeAppointmentController::class, 'addMakeAppointment'])->name('makeappointment.add');
+Route::post('addMakeAppointment', [CrudMakeAppointmentController::class, 'storeMakeAppointment'])->name('makeappointment.store');
+Route::get('editMakeAppointment', [CrudMakeAppointmentController::class, 'editMakeAppointment'])->name('makeappointment.edit');
+Route::post('updateMakeAppointment', [CrudMakeAppointmentController::class, 'updateMakeAppointment'])->name('makeappointment.update');
+Route::get('deleteMakeAppointment', [CrudMakeAppointmentController::class, 'deleteMakeAppointment'])->name('makeappointment.delete');
 
 Route::get('/', function () {
     return view('welcome');
